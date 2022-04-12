@@ -4,6 +4,7 @@ import CheckBox from './components/Checkbox/Checkbox'
 import Header from './components/Header/Header'
 import Image from './components/Image/Image'
 import Card from './components/Card/Card'
+import Footer from './components/Footer/Footer'
 
 import {
   withComponentMappingContext,
@@ -50,6 +51,7 @@ MapTo('vue/components/text')(Text, {
 })
 
 MapTo('vue/components/card')(Card, EditConfig)
+MapTo('vue/components/footer')(Footer, EditConfig)
 
 // Container Component Mapping
 MapTo('vue/components/container')(
