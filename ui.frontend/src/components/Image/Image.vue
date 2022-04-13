@@ -1,5 +1,15 @@
 <template>
-  <img :src="src" />
+   <section class="banner">
+    <figure class="banner__figure">
+      <img
+        class="banner__img"
+        :src="src"
+        alt="error 404"
+        width="287"
+        height="240"
+      />
+    </figure>
+  </section>
 </template>
 
 <script>
@@ -12,3 +22,6 @@ export default {
   }
 }
 </script>
+<style lang="scss" scoped>
+@import "./image.scss";
+</style>

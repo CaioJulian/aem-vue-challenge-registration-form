@@ -3,6 +3,10 @@ import AppPage from './components/Page/AppPage'
 import CheckBox from './components/Checkbox/Checkbox'
 import Header from './components/Header/Header'
 import Image from './components/Image/Image'
+import Card from './components/Card/Card'
+import Footer from './components/Footer/Footer'
+import Margin from './components/Margin/Margin'
+
 import {
   withComponentMappingContext,
   AllowedComponentsContainer,
@@ -46,6 +50,10 @@ MapTo('vue/components/text')(Text, {
     return !props || !props.text || props.text.trim().length < 1
   }
 })
+
+MapTo('vue/components/card')(Card, EditConfig)
+MapTo('vue/components/footer')(Footer, EditConfig)
+MapTo('vue/components/margin')(Margin, EditConfig)
 
 // Container Component Mapping
 MapTo('vue/components/container')(
