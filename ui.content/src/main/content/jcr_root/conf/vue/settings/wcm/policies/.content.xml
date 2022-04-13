@@ -372,13 +372,12 @@
                 <responsivegrid jcr:primaryType="nt:unstructured">
                     <spa-default
                         jcr:description="Includes only SPA-Enabled components."
-                        jcr:lastModified="{Date}2022-04-12T00:33:53.336-03:00"
+                        jcr:lastModified="{Date}2022-03-24T12:15:39.587-03:00"
                         jcr:lastModifiedBy="admin"
                         jcr:primaryType="nt:unstructured"
                         jcr:title="SPA Content"
                         sling:resourceType="wcm/core/components/policy/policy"
-                        columns="24"
-                        components="[group:SPA Vue Project - Content]">
+                        components="[/libs/wcm/foundation/components/responsivegrid,group:SPA Vue Project - Content]">
                         <jcr:content jcr:primaryType="nt:unstructured"/>
                     </spa-default>
                 </responsivegrid>
