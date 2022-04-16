@@ -6,6 +6,9 @@ import Image from './components/Image/Image'
 import Card from './components/Card/Card'
 import Footer from './components/Footer/Footer'
 import Margin from './components/Margin/Margin'
+import BannerFigureLogin from './components/Login/BannerFigureLogin'
+import LogoFigureLogin from './components/Login/LogoFigureLogin'
+import CardLogin from './components/Login/CardLogin'
 
 import {
   withComponentMappingContext,
@@ -66,3 +69,19 @@ MapTo('vue/components/container')(
     }
   }
 )
+
+MapTo('vue/components/login/banner')(BannerFigureLogin, {
+  emptyLabel: 'Image',
+  isEmpty: function (props) {
+    return !props || !props.src || props.src.trim().length < 1
+  },
+  resourceType: 'vue/components/login/banner'
+})
+MapTo('vue/components/login/logo')(LogoFigureLogin, {
+  emptyLabel: 'Image',
+  isEmpty: function (props) {
+    return !props || !props.src || props.src.trim().length < 1
+  },
+  resourceType: 'vue/components/login/logo'
+})
+MapTo('vue/components/login/card')(CardLogin, EditConfig)

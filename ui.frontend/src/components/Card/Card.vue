@@ -10,23 +10,23 @@
 
 <script>
 export default {
-  name: "Card",
+  name: 'Card',
   props: {
     title: {
       type: String,
-      default: "I have bad news for you",
+      default: 'I have bad news for you'
     },
     description: {
       type: String,
       default:
-        "The page you are looking for might be removed or is temporarily unavailable",
+        'The page you are looking for might be removed or is temporarily unavailable'
     },
     buttonTitle: {
       type: String,
-      default: "Back to homepage",
-    },
-  },
-};
+      default: 'Back to homepage'
+    }
+  }
+}
 </script>
 
 <style lang="scss" scoped>

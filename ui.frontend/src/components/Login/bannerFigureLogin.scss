@@ -1,0 +1,21 @@
+.banner-figure-login {
+  display: none;
+  margin: 0;
+}
+@media (min-width: 1024px) {
+  .banner-figure-login {
+    display: flex;
+    position: absolute;
+    top: 0;
+    right: 0;
+    max-width: 960px;
+    width: 100%;
+    height: 100%;
+
+    &__img {
+      height: auto;
+      object-fit: cover;
+      object-position: left;
+    }
+  }
+}

@@ -3,19 +3,19 @@
 </template>
 
 <script>
-import style from "./margin.module.scss";
+import style from './margin.module.scss'
 export default {
-  name: "Margin",
+  name: 'Margin',
   props: {
     size: {
       type: String,
-      default: "xs",
-    },
+      default: 'xs'
+    }
   },
-  data() {
+  data () {
     return {
-      style,
-    };
-  },
-};
+      style
+    }
+  }
+}
 </script>

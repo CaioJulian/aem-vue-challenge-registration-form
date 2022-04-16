@@ -1,0 +1,35 @@
+body {
+  background: linear-gradient(180deg, #33383d 0%, #1c1d20 100%);
+}
+.card-login {
+  display: flex;
+  flex-direction: column;
+  max-width: 379px;
+  margin: auto;
+  padding: 1rem 2rem;
+  z-index: 1;
+  position: relative;
+
+  &__header {
+    max-width: 301px;
+    width: 100%;
+  }
+
+  &__title {
+    margin: 0;
+    font-weight: 400;
+    font-size: 3.75rem;
+    line-height: 4.75rem;
+  }
+
+  &__description {
+    font-weight: 400;
+    font-size: 1rem;
+    line-height: 1.25rem;
+  }
+}
+@media (min-width: 1024px) {
+  .card-login {
+    margin: 0;
+  }
+}
