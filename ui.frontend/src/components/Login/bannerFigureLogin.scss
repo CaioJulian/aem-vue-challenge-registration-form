@@ -5,17 +5,22 @@
 @media (min-width: 1024px) {
   .banner-figure-login {
     display: flex;
+    justify-content: flex-end;
     position: absolute;
     top: 0;
     right: 0;
-    max-width: 960px;
-    width: 100%;
     height: 100%;
 
     &__img {
+      max-width: 400px;
       height: auto;
       object-fit: cover;
       object-position: left;
     }
+  }
+}
+@media (min-width: 1280px) {
+  .banner-figure-login__img {
+    max-width: 100%;
   }
 }
