@@ -30,12 +30,23 @@ export default {
     }
   },
   mounted () {
-    this.setBackgroundColor()
+    this.toggleBackgroundColor()
+  },
+  watch: {
+    background () {
+      this.toggleBackgroundColor()
+    }
   },
   methods: {
-    setBackgroundColor () {
+    toggleBackgroundColor () {
+      const { background } = this
       const body = document.getElementsByTagName('body')[0]
-      body.classList.add(`bg--${this.background}`)
+
+      if (background === 'none' && body.classList.contains('bg--gray')) {
+        body.classList.toggle('bg--gray')
+      } else {
+        body.classList.add(`bg--${background}`)
+      }
     }
   }
 }

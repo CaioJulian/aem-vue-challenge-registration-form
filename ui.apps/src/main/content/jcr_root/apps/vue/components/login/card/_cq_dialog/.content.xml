@@ -22,7 +22,7 @@
                         fieldLabel="Description"
                         name="./description"/>
                     <background cq-msm-lockable="./background"
-                        fieldLabel="Backgound Color"
+                        fieldLabel="Background Color"
                         jcr:primaryType="nt:unstructured"
                         name="./background"
                         sling:resourceType="granite/ui/components/coral/foundation/form/radiogroup">
