@@ -9,6 +9,7 @@ import Margin from './components/Margin/Margin'
 import BannerFigureLogin from './components/Login/BannerFigureLogin'
 import LogoFigureLogin from './components/Login/LogoFigureLogin'
 import CardLogin from './components/Login/CardLogin'
+import FormLogin from './components/Login/FormLogin'
 import FigureHome from './components/Home/FigureHome'
 import FooterHome from './components/Home/FooterHome'
 import HeaderHome from './components/Home/HeaderHome'
@@ -86,6 +87,13 @@ MapTo('vue/components/login/logo')(LogoFigureLogin, {
     return !props || !props.src || props.src.trim().length < 1
   },
   resourceType: 'vue/components/login/logo'
+})
+MapTo('vue/components/login/form')(FormLogin, {
+  emptyLabel: 'Image',
+  isEmpty: function (props) {
+    return !props || !props.src || props.src.trim().length < 1
+  },
+  resourceType: 'vue/components/login/form'
 })
 MapTo('vue/components/login/card')(CardLogin, EditConfig)
 
