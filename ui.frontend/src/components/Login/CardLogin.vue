@@ -6,14 +6,11 @@
         {{ description }}
       </p>
     </article>
-    <FormLogin />
   </section>
 </template>
 
 <script>
-import FormLogin from './FormLogin.vue'
 export default {
-  components: { FormLogin },
   props: {
     title: {
       type: String,
