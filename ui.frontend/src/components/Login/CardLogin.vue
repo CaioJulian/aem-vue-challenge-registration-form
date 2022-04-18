@@ -23,11 +23,24 @@ export default {
       type: String,
       default:
         'Para continuar navegando de forma segura, efetue o login na rede.'
+    },
+    background: {
+      type: String,
+      default: 'gray'
+    }
+  },
+  mounted () {
+    this.setBackgroundColor()
+  },
+  methods: {
+    setBackgroundColor () {
+      const body = document.getElementsByTagName('body')[0]
+      body.classList.add(`bg--${this.background}`)
     }
   }
 }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 @import "./cardLogin.scss";
 </style>

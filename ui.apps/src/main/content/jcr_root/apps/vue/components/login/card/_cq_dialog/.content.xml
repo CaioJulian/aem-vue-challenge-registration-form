@@ -21,11 +21,24 @@
                         sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
                         fieldLabel="Description"
                         name="./description"/>
-                    <buttonTitle
+                    <background cq-msm-lockable="./background"
+                        fieldLabel="Backgound Color"
                         jcr:primaryType="nt:unstructured"
-                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
-                        fieldLabel="Button title"
-                        name="./buttonTitle"/>
+                        name="./background"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/radiogroup">
+                        <items jcr:primaryType="nt:unstructured">
+                            <gray checked="{Boolean}true"
+                                jcr:primaryType="nt:unstructured"
+                                name="background"
+                                text="Gray"
+                                value="gray"/>
+                            <none checked="{Boolean}false"
+                                jcr:primaryType="nt:unstructured"
+                                name="background"
+                                text="None"
+                                value="none"/>
+                        </items>
+                    </background>
                 </items>
             </column>
         </items>
