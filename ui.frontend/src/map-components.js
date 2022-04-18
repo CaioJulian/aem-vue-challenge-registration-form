@@ -9,6 +9,9 @@ import Margin from './components/Margin/Margin'
 import BannerFigureLogin from './components/Login/BannerFigureLogin'
 import LogoFigureLogin from './components/Login/LogoFigureLogin'
 import CardLogin from './components/Login/CardLogin'
+import FigureHome from './components/Home/FigureHome'
+import FooterHome from './components/Home/FooterHome'
+import HeaderHome from './components/Home/HeaderHome'
 
 import {
   withComponentMappingContext,
@@ -85,3 +88,25 @@ MapTo('vue/components/login/logo')(LogoFigureLogin, {
   resourceType: 'vue/components/login/logo'
 })
 MapTo('vue/components/login/card')(CardLogin, EditConfig)
+
+MapTo('vue/components/home/figure')(FigureHome, {
+  emptyLabel: 'Image',
+  isEmpty: function (props) {
+    return !props || !props.src || props.src.trim().length < 1
+  },
+  resourceType: 'vue/components/home/figure'
+})
+MapTo('vue/components/home/footer')(FooterHome, {
+  emptyLabel: 'Image',
+  isEmpty: function (props) {
+    return !props || !props.src || props.src.trim().length < 1
+  },
+  resourceType: 'vue/components/home/footer'
+})
+MapTo('vue/components/home/header')(HeaderHome, {
+  emptyLabel: 'Image',
+  isEmpty: function (props) {
+    return !props || !props.src || props.src.trim().length < 1
+  },
+  resourceType: 'vue/components/home/header'
+})
