@@ -2,12 +2,12 @@
 <jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
     jcr:primaryType="cq:Page">
     <jcr:content
-        cq:lastModified="{Date}2022-04-16T20:00:54.586-03:00"
+        cq:lastModified="{Date}2022-04-18T14:32:51.383-03:00"
         cq:lastModifiedBy="admin"
-        cq:template="/conf/vue/settings/wcm/templates/spa-page-template"
+        cq:template="/conf/vue/settings/wcm/templates/full-page"
         jcr:primaryType="cq:PageContent"
         jcr:title="Login"
-        sling:resourceType="vue/components/page"
+        sling:resourceType="vue/components/spa"
         pwaCachestrategy="staleWhileRevalidate"
         pwaDisplay="standalone"
         pwaOrientation="any">
@@ -15,29 +15,20 @@
             jcr:primaryType="nt:unstructured"
             sling:resourceType="wcm/foundation/components/responsivegrid">
             <responsivegrid
-                jcr:created="{Date}2018-10-22T16:48:57.968+05:30"
-                jcr:createdBy="admin"
-                jcr:lastModified="{Date}2018-10-22T16:49:29.168+05:30"
-                jcr:lastModifiedBy="admin"
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="wcm/foundation/components/responsivegrid">
                 <responsivegrid
-                    jcr:created="{Date}2022-04-16T17:46:30.954-03:00"
+                    jcr:created="{Date}2022-04-18T12:39:20.596-03:00"
                     jcr:createdBy="admin"
-                    jcr:lastModified="{Date}2022-04-16T17:46:30.954-03:00"
+                    jcr:lastModified="{Date}2022-04-18T12:39:20.596-03:00"
                     jcr:lastModifiedBy="admin"
                     jcr:primaryType="nt:unstructured"
                     sling:resourceType="wcm/foundation/components/responsivegrid">
-                    <cq:responsive jcr:primaryType="nt:unstructured">
-                        <phone
-                            jcr:primaryType="nt:unstructured"
-                            offset="0"
-                            width="11"/>
-                    </cq:responsive>
+                    <cq:responsive jcr:primaryType="nt:unstructured"/>
                     <logo
-                        jcr:created="{Date}2022-04-16T17:55:48.879-03:00"
+                        jcr:created="{Date}2022-04-18T12:44:18.587-03:00"
                         jcr:createdBy="admin"
-                        jcr:lastModified="{Date}2022-04-16T18:02:02.817-03:00"
+                        jcr:lastModified="{Date}2022-04-18T12:44:36.468-03:00"
                         jcr:lastModifiedBy="admin"
                         jcr:primaryType="nt:unstructured"
                         sling:resourceType="vue/components/login/logo"
@@ -45,24 +36,25 @@
                         fileReference="/content/dam/vue/img/logo-compass-white.png"
                         isDecorative="true"
                         titleValueFromDAM="true"/>
-                    <card
-                        jcr:created="{Date}2022-04-16T17:56:30.561-03:00"
+                    <margin
+                        jcr:created="{Date}2022-04-18T13:03:45.819-03:00"
                         jcr:createdBy="admin"
-                        jcr:lastModified="{Date}2022-04-16T17:56:30.561-03:00"
+                        jcr:lastModified="{Date}2022-04-18T13:03:45.819-03:00"
                         jcr:lastModifiedBy="admin"
                         jcr:primaryType="nt:unstructured"
-                        sling:resourceType="vue/components/login/card">
-                        <cq:responsive jcr:primaryType="nt:unstructured">
-                            <phone
-                                jcr:primaryType="nt:unstructured"
-                                offset="0"
-                                width="11"/>
-                        </cq:responsive>
-                    </card>
-                    <banner
-                        jcr:created="{Date}2022-04-16T20:00:38.083-03:00"
+                        sling:resourceType="vue/components/margin"/>
+                    <card
+                        jcr:created="{Date}2022-04-18T12:39:36.449-03:00"
                         jcr:createdBy="admin"
-                        jcr:lastModified="{Date}2022-04-16T20:00:54.581-03:00"
+                        jcr:lastModified="{Date}2022-04-18T14:32:51.380-03:00"
+                        jcr:lastModifiedBy="admin"
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="vue/components/login/card"
+                        background="gray"/>
+                    <banner
+                        jcr:created="{Date}2022-04-18T12:41:23.707-03:00"
+                        jcr:createdBy="admin"
+                        jcr:lastModified="{Date}2022-04-18T12:41:56.553-03:00"
                         jcr:lastModifiedBy="admin"
                         jcr:primaryType="nt:unstructured"
                         sling:resourceType="vue/components/login/banner"

@@ -3,7 +3,7 @@
     jcr:primaryType="cq:Page">
     <jcr:content
         cq:deviceGroups="[mobile/groups/responsive]"
-        cq:lastModified="{Date}2022-04-16T19:47:44.819-03:00"
+        cq:lastModified="{Date}2022-04-18T09:51:51.481-03:00"
         cq:lastModifiedBy="admin"
         cq:template="/conf/vue/settings/wcm/templates/spa-page-template"
         jcr:primaryType="cq:PageContent"
@@ -24,8 +24,8 @@
                         width="10"/>
                     <phone
                         jcr:primaryType="nt:unstructured"
-                        offset="0"
-                        width="12"/>
+                        offset="1"
+                        width="11"/>
                 </cq:responsive>
             </responsivegrid>
         </root>
