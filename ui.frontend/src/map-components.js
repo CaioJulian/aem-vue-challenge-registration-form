@@ -8,6 +8,7 @@ import Footer from './components/Footer/Footer'
 import Margin from './components/Margin/Margin'
 import BannerFigureLogin from './components/Login/BannerFigureLogin'
 import LogoFigureLogin from './components/Login/LogoFigureLogin'
+import LogoDesktopLogin from './components/Login/LogoDesktopLogin'
 import CardLogin from './components/Login/CardLogin'
 import FormLogin from './components/Login/FormLogin'
 import FigureHome from './components/Home/FigureHome'
@@ -81,12 +82,19 @@ MapTo('vue/components/login/banner')(BannerFigureLogin, {
   },
   resourceType: 'vue/components/login/banner'
 })
-MapTo('vue/components/login/logo')(LogoFigureLogin, {
-  emptyLabel: 'Image',
+MapTo('vue/components/login/logo-mobile')(LogoFigureLogin, {
+  emptyLabel: 'Mobile Logo',
   isEmpty: function (props) {
     return !props || !props.src || props.src.trim().length < 1
   },
-  resourceType: 'vue/components/login/logo'
+  resourceType: 'vue/components/login/logo-mobile'
+})
+MapTo('vue/components/login/logo-desktop')(LogoDesktopLogin, {
+  emptyLabel: 'Desktop Logo',
+  isEmpty: function (props) {
+    return !props || !props.src || props.src.trim().length < 1
+  },
+  resourceType: 'vue/components/login/logo-desktop'
 })
 MapTo('vue/components/login/form')(FormLogin, {
   emptyLabel: 'Image',

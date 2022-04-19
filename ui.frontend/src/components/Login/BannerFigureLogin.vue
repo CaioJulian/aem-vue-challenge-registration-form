@@ -1,13 +1,8 @@
 <template>
-  <figure class="banner-figure-login">
-    <img
-      class="banner-figure-login__img"
-      :src="src"
-      alt="banner notebook"
-      width="960"
-      height="1080"
-    />
-  </figure>
+  <section
+    :style="`background-image: url(${src})`"
+    class="banner-login"
+  ></section>
 </template>
 
 <script>
@@ -16,7 +11,7 @@ export default {
   props: {
     src: {
       type: String,
-      default: '/img/banner-notebook.png'
+      default: '/content/dam/vue/img/banner-notebook.png'
     }
   }
 }

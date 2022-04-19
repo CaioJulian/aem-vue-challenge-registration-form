@@ -1,12 +1,12 @@
 <template>
-  <figure class="logo-figure-login">
-    <img :src="src" alt="logo compass white" width="306" height="69" />
+  <figure class="logo-desktop-login">
+    <img :src="src" alt="logo compass white desktop" width="306" height="69" />
   </figure>
 </template>
 
 <script>
 export default {
-  name: 'LogoFigureLogin',
+  name: 'LogoDesktopLogin',
   props: {
     src: {
       type: String,
@@ -15,7 +15,6 @@ export default {
   }
 }
 </script>
-
 <style lang="scss" scoped>
-@import "./logoFigureLogin.scss";
+@import url("./logoDesktopLogin.scss");
 </style>
