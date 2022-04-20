@@ -10,7 +10,9 @@
 </template>
 
 <script>
+import ToggleBackgroundColorMixins from '@/mixins/ToggleBackgroundColor'
 export default {
+  mixins: [ToggleBackgroundColorMixins],
   props: {
     title: {
       type: String,
@@ -24,26 +26,6 @@ export default {
     background: {
       type: String,
       default: 'gray'
-    }
-  },
-  mounted () {
-    this.toggleBackgroundColor()
-  },
-  watch: {
-    background () {
-      this.toggleBackgroundColor()
-    }
-  },
-  methods: {
-    toggleBackgroundColor () {
-      const { background } = this
-      const body = document.getElementsByTagName('body')[0]
-
-      if (background === 'none' && body.classList.contains('bg--gray')) {
-        body.classList.toggle('bg--gray')
-      } else {
-        body.classList.add(`bg--${background}`)
-      }
     }
   }
 }
