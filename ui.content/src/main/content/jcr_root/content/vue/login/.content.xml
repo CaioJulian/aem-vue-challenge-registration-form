@@ -2,7 +2,7 @@
 <jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
     jcr:primaryType="cq:Page">
     <jcr:content
-        cq:lastModified="{Date}2022-04-19T14:51:14.199-03:00"
+        cq:lastModified="{Date}2022-04-20T15:56:54.361-03:00"
         cq:lastModifiedBy="admin"
         cq:template="/conf/vue/settings/wcm/templates/spa-page-template"
         jcr:primaryType="cq:PageContent"
@@ -62,10 +62,11 @@
                         <card
                             jcr:created="{Date}2022-04-18T17:01:15.445-03:00"
                             jcr:createdBy="admin"
-                            jcr:lastModified="{Date}2022-04-18T17:01:15.445-03:00"
+                            jcr:lastModified="{Date}2022-04-20T15:56:54.357-03:00"
                             jcr:lastModifiedBy="admin"
                             jcr:primaryType="nt:unstructured"
-                            sling:resourceType="vue/components/login/card"/>
+                            sling:resourceType="vue/components/login/card"
+                            background="gray"/>
                         <form
                             jcr:created="{Date}2022-04-18T17:00:15.982-03:00"
                             jcr:createdBy="admin"
