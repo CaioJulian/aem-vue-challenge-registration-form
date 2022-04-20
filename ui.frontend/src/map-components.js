@@ -11,7 +11,7 @@ import LogoFigureLogin from './components/Login/LogoFigureLogin'
 import LogoDesktopLogin from './components/Login/LogoDesktopLogin'
 import CardLogin from './components/Login/CardLogin'
 import FormLogin from './components/Login/FormLogin'
-import FigureHome from './components/Home/FigureHome'
+import BannerHome from './components/Home/BannerHome'
 import FooterHome from './components/Home/FooterHome'
 import HeaderHome from './components/Home/HeaderHome'
 
@@ -105,12 +105,12 @@ MapTo('vue/components/login/form')(FormLogin, {
 })
 MapTo('vue/components/login/card')(CardLogin, EditConfig)
 
-MapTo('vue/components/home/figure')(FigureHome, {
+MapTo('vue/components/home/banner')(BannerHome, {
   emptyLabel: 'Image',
   isEmpty: function (props) {
     return !props || !props.src || props.src.trim().length < 1
   },
-  resourceType: 'vue/components/home/figure'
+  resourceType: 'vue/components/home/banner'
 })
 MapTo('vue/components/home/footer')(FooterHome, {
   emptyLabel: 'Image',
