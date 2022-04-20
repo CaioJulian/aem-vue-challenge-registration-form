@@ -1,5 +1,9 @@
 <template>
   <footer class="footer-home">
+    <section class="footer-home__card-left">
+      <p class="footer-home__description-left">{{ description }}</p>
+      <div class="footer-home__pipe"></div>
+    </section>
     <form class="footer-home__form" action="">
       <input
         type="search"
@@ -8,82 +12,44 @@
         required
       />
     </form>
-    <div class="footer-home__group-button">
+    <section class="footer-home__card-right">
+      <div class="footer-home__pipe"></div>
+      <p class="footer-home__description-right">Application refresh in</p>
+      <article class="footer-home__timer">
+        <p class="footer-home__number">{{ number }}</p>
+        <p class="footer-home__unit">{{ unit }}</p>
+      </article>
+    </section>
+    <section class="footer-home__group-button">
       <button class="footer-home__button-nav">Continuar Navegando</button>
       <button class="footer-home__button-logout">Logout</button>
-    </div>
+    </section>
   </footer>
 </template>
 
 <script>
-export default {}
+export default {
+  props: {
+    description: {
+      type: String,
+      default:
+        'Essa janela do navegador é usada para manter sua sessão de autenticação ativa. Deixe-a aberta em segundo plano e abra uma nova janela para continuar a navegar.'
+    }
+  },
+  data () {
+    return {
+      number: 180
+    }
+  },
+  computed: {
+    unit () {
+      const { number } = this
+      return number > 1 ? 'seconds' : 'second'
+    }
+  }
+}
 </script>
 
 <style lang="scss" scoped>
-.footer-home {
-  position: fixed;
-  max-width: 2560px;
-  width: 100%;
-  height: 100px;
-  left: 0;
-  bottom: -1px;
-  background: linear-gradient(90.16deg, #33383d 0%, #1c1d20 100%);
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-
-  &__form {
-    margin: 0 1rem;
-  }
-
-  &__input {
-    max-width: 219px;
-    height: 45px;
-    background: #26292c;
-    border: 1px solid #ffffff;
-    box-sizing: border-box;
-    border-radius: 50px;
-    font-weight: 400;
-    font-size: 0.875rem;
-    line-height: 1rem;
-    text-align: center;
-    color: #ffffff;
-
-    &--user {
-      background: url('/img/icons/user.png') no-repeat 10%;
-      background-size: 15px;
-    }
-  }
-
-  &__group-button {
-    display: flex;
-    align-items: center;
-  }
-
-  &__button-nav {
-    border: none;
-    max-width: 109px;
-    width: 100%;
-    height: 99px;
-    background: #ffffff;
-    font-weight: 400;
-    font-size: 0.75rem;
-    line-height: 0.938rem;
-    text-align: center;
-    color: #c13216;
-  }
-
-  &__button-logout {
-    background: transparent;
-    border: none;
-    max-width: 89px;
-    width: 100%;
-    height: 55px;
-    font-weight: 700;
-    font-size: 0.75rem;
-    line-height: 0.938rem;
-    text-align: center;
-    color: #ffffff;
-  }
-}
+@import './footerHome.scss'
 </style>
