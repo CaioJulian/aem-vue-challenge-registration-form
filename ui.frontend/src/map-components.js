@@ -14,6 +14,7 @@ import FormLogin from './components/Login/FormLogin'
 import BannerHome from './components/Home/BannerHome'
 import FooterHome from './components/Home/FooterHome'
 import HeaderHome from './components/Home/HeaderHome'
+import CardHome from './components/Home/CardHome'
 
 import {
   withComponentMappingContext,
@@ -126,3 +127,4 @@ MapTo('vue/components/home/header')(HeaderHome, {
   },
   resourceType: 'vue/components/home/header'
 })
+MapTo('vue/components/home/card')(CardHome, EditConfig)
