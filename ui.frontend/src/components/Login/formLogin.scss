@@ -40,7 +40,20 @@
     &--icon-lock {
       background: url('/content/dam/vue/img/icons/lock.png') no-repeat 95%;
       background-size: 15px;
+    }   
+
+    &--error {
+      border: 1px solid #e9b425;
     }
+  }
+
+  &__message-error {
+    margin: 0 1.5rem;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 20px;
+    text-align: center;
+    color: #e9b425;
   }
 
   &__button {
@@ -55,5 +68,10 @@
     font-size: 1.125rem;
     line-height: 1.438rem;
     color: #ffffff;
+    cursor: pointer;
+
+    &--small-margin {
+      margin-top: 2.5rem;
+    }
   }
 }

@@ -4,22 +4,33 @@
       <h2 class="form__title">Login</h2>
       <form class="form__group" @submit.prevent="handleSubmit">
         <input
-          v-model="form.user"
+          v-model.trim="form.user"
           data-testid="user-input"
           class="form__input form__input--icon-user"
+          :class="{ 'form__input--error': !isValid }"
           type="text"
           placeholder="Usuário"
           required
         />
         <input
-          v-model="form.password"
+          v-model.number="form.password"
           data-testid="password-input"
           class="form__input form__input--icon-lock"
+          :class="{ 'form__input--error': !isValid }"
           type="password"
           placeholder="Senha"
+          inputmode="numeric"
           required
         />
-        <button data-testid="login-button" class="form__button" type="submit">
+        <p v-show="!isValid" class="form__message-error">
+          Ops, usuário ou senha inválidos. Tente novamente!
+        </p>
+        <button
+          data-testid="login-button"
+          class="form__button"
+          :class="{ 'form__button--small-margin': !isValid }"
+          type="submit"
+        >
           Continuar
         </button>
       </form>
@@ -38,14 +49,44 @@ export default {
       }
     }
   },
+  computed: {
+    isValid () {
+      return this.$store.state.loginManager.isValid
+    }
+  },
   methods: {
     handleSubmit () {
-      return false
+      const handleValid = this.handleValidation()
+
+      if (handleValid) {
+        this.$store.dispatch('loginManager/fetchLogin', this.form)
+      }
+    },
+
+    handleValidation () {
+      // eslint-disable-next-line prefer-const
+      let { user, password } = this.form
+      user = user.toLowerCase()
+      this.form.user = user
+
+      const resultUser = /^[a-z.]+$/.test(user)
+
+      const passLength = password.toString().length
+
+      const resultNumberPassword = /^[0-9]+$/.test(password)
+
+      const resultLengthPassword = passLength >= 6 && passLength < 9
+
+      const result = resultUser && resultLengthPassword && resultNumberPassword
+
+      this.$store.commit('loginManager/setIsValid', result)
+
+      return result
     }
   }
 }
 </script>
 
 <style lang="scss" scoped>
-@import "./formLogin.scss";
+@import './formLogin.scss';
 </style>
