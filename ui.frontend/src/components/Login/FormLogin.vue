@@ -60,6 +60,7 @@ export default {
 
       if (handleValid) {
         this.$store.dispatch('loginManager/fetchLogin', this.form)
+        this.redirectPageHome()
       }
     },
 
@@ -82,6 +83,11 @@ export default {
       this.$store.commit('loginManager/setIsValid', result)
 
       return result
+    },
+
+    redirectPageHome () {
+      const { userLogin } = this.$store.state.loginManager
+      if (userLogin.login) window.location.href = '/content/vue/home.html'
     }
   }
 }

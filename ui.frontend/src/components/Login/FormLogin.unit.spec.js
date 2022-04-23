@@ -6,6 +6,14 @@ import * as managerLogin from '@/store/loginManager'
 const localVue = createLocalVue()
 localVue.use(Vuex)
 
+global.window = Object.create(window)
+const url = 'http://example.com/login'
+Object.defineProperty(window, 'location', {
+  value: {
+    href: url,
+  },
+})
+
 describe('FormLogin - unit', () => {
   let store, loginManager
 
@@ -25,7 +33,7 @@ describe('FormLogin - unit', () => {
   const mountFormLogin = () => {
     const wrapper = mount(FormLogin, {
       store,
-      localVue,
+      localVue
     })
 
     return wrapper
@@ -34,6 +42,7 @@ describe('FormLogin - unit', () => {
   it('should mount component', () => {
     const wrapper = mountFormLogin()
     expect(wrapper.vm).toBeTruthy()
+    expect(window.location.href).toEqual(url)
   })
 
   it('should handleSubmit login success', async () => {
