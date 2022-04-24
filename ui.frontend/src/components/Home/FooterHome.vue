@@ -21,7 +21,14 @@
       </article>
     </section>
     <section class="footer-home__group-button">
-      <button class="footer-home__button-nav">Continuar Navegando</button>
+       <button
+        data-testid="nav-button"
+        class="footer-home__button-nav"
+        title="Continuar Navegando"
+        @click="pauseCountdown()"
+      >
+        Continuar Navegando
+      </button>
       <button
         data-testid="logout-button"
         class="footer-home__button-logout"
@@ -45,6 +52,7 @@ export default {
   },
   data () {
     return {
+      countdown: true,
       number: 180
     }
   },
@@ -54,10 +62,28 @@ export default {
       return number > 1 ? 'seconds' : 'second'
     }
   },
+  watch: {
+    number: {
+      handler (value) {
+        setTimeout(() => {
+          if (value > 0 && this.countdown) {
+            this.number--
+          } else if (value === 0) {
+            this.logout()
+          }
+        }, 1000)
+      },
+      immediate: true
+    }
+  },
   methods: {
     logout () {
       this.$store.commit('loginManager/setLogin', {})
-      window.location.href = '/content/vue/login.html'
+      window.location.href = '/content/vue/login.html?wcmmode=disabled'
+    },
+
+    pauseCountdown () {
+      this.countdown = false
     }
   }
 }

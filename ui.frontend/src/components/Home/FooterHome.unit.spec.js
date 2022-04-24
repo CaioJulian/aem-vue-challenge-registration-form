@@ -37,6 +37,10 @@ describe('FooterHome - unit', () => {
     })
   })
 
+  afterEach(() => {
+    jest.useRealTimers()
+  })
+
   const mountFooterHome = () => {
     const wrapper = mount(FooterHome, {
       localVue,
@@ -53,12 +57,16 @@ describe('FooterHome - unit', () => {
   })
 
   it('should count number for zero', async () => {
+    jest.useFakeTimers()
+
     const wrapper = mountFooterHome()
     await wrapper.setData({ number: 0 })
 
+    jest.advanceTimersByTime(1000)
+
     expect(wrapper.text()).toContain('0')
     expect(wrapper.text()).toContain('second')
-    expect(wrapper.vm.number).toEqual(0)
+    expect(wrapper.vm.number).toEqual(-1)
   })
 
   it('should click button logout', async () => {
@@ -67,5 +75,13 @@ describe('FooterHome - unit', () => {
     await button.trigger('click')
 
     expect(store.state.loginManager.userLogin).toEqual({})
+  })
+
+  it('should click button navigation and pause countdown', async () => {
+    const wrapper = mountFooterHome()
+    const button = wrapper.find('[data-testid="nav-button"]')
+    await button.trigger('click')
+
+    expect(wrapper.vm.countdown).toEqual(false)
   })
 })
