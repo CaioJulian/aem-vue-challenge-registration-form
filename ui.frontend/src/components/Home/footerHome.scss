@@ -68,6 +68,16 @@
     line-height: 0.938rem;
     text-align: center;
     color: #ffffff;
+    cursor: pointer;
+
+    &:hover {
+      background-color: #101012;
+      border: #101012;
+    }
+
+    &:active {
+      transform: translateY(1px);
+    }
   }
 }
 
