@@ -15,7 +15,10 @@ Object.defineProperty(window, 'location', {
 })
 
 const $route = {
-  path: '/content/vue/login.html'
+  path: '/content/vue/login.html',
+}
+const componentProperties = {
+  isInEditor: false,
 }
 
 describe('FormLogin - unit', () => {
@@ -39,8 +42,11 @@ describe('FormLogin - unit', () => {
       store,
       localVue,
       mocks: {
-        $route
-      }
+        $route,
+      },
+      attrs: {
+        componentProperties,
+      },
     })
 
     return wrapper
