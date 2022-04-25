@@ -29,6 +29,7 @@
           data-testid="login-button"
           class="form__button"
           :class="{ 'form__button--small-margin': !isValid }"
+          title="Continuar"
           type="submit"
         >
           Continuar
@@ -39,8 +40,10 @@
 </template>
 
 <script>
+import CheckUserLoginLocalStorageMixins from '@/mixins/CheckUserLoginLocalStorage'
 export default {
   name: 'FormLogin',
+  mixins: [CheckUserLoginLocalStorageMixins],
   data () {
     return {
       form: {

@@ -14,6 +14,10 @@ Object.defineProperty(window, 'location', {
   },
 })
 
+const $route = {
+  path: '/content/vue/login.html'
+}
+
 describe('FormLogin - unit', () => {
   let store, loginManager
 
@@ -33,7 +37,10 @@ describe('FormLogin - unit', () => {
   const mountFormLogin = () => {
     const wrapper = mount(FormLogin, {
       store,
-      localVue
+      localVue,
+      mocks: {
+        $route
+      }
     })
 
     return wrapper

@@ -8,6 +8,7 @@ export const state = () => ({
 export const mutations = {
   setLogin (state, payload) {
     state.userLogin = payload
+    localStorage.setItem('userLogin', JSON.stringify(payload))
   },
 
   setIsValid (state, payload) {
