@@ -90,7 +90,7 @@ export default {
 
     redirectPageHome () {
       const { userLogin } = this.$store.state.loginManager
-      if (userLogin.login) window.location.href = '/content/vue/home.html?wcmmode=disabled'
+      if (userLogin.login) window.location.pathname = '/content/vue/home.html'
     }
   }
 }
