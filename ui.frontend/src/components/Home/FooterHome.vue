@@ -81,7 +81,7 @@ export default {
   methods: {
     logout () {
       this.$store.commit('loginManager/setLogin', {})
-      window.location.href = '/content/vue/login.html?wcmmode=disabled'
+      window.location.pathname = '/content/vue/login.html'
     },
 
     pauseCountdown () {

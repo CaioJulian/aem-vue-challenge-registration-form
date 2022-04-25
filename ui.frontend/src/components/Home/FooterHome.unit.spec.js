@@ -18,6 +18,10 @@ const $route = {
   path: '/content/vue/home.html',
 }
 
+const componentProperties = {
+  isInEditor: false,
+}
+
 describe('FooterHome - unit', () => {
   let store, loginManager
 
@@ -50,7 +54,10 @@ describe('FooterHome - unit', () => {
       localVue,
       store,
       mocks: {
-        $route
+        $route,
+      },
+      attrs:{
+        componentProperties
       }
     })
 
