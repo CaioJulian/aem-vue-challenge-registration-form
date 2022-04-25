@@ -40,7 +40,7 @@ export default {
     },
     clock () {
       const { date } = this
-      return `${date.getHours()}:${date.getMinutes()}`
+      return `${(`0${date.getHours()}`).slice(-2)}:${(`0${date.getMinutes()}`).slice(-2)}`
     }
   },
   watch: {
