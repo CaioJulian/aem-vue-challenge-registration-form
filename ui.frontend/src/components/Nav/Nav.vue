@@ -7,24 +7,24 @@ export default {
   props: {
     pageName: {
       type: String,
-      default: '',
+      default: ''
     },
     redirectPath: {
       type: String,
-      default: '/content/vue/home.html',
-    },
+      default: '/content/vue/home.html'
+    }
   },
   watch: {
-    pageName() {
+    pageName () {
       this.checkUserLoginLocalStorage()
-    },
+    }
   },
-  mounted() {
+  mounted () {
     this.checkUserLoginLocalStorage()
   },
 
   methods: {
-    checkUserLoginLocalStorage() {
+    checkUserLoginLocalStorage () {
       const userLogin = JSON.parse(localStorage.getItem('userLogin'))
       const { isInEditor } = this.$attrs.componentProperties
       const { pageName, redirectPath } = this
@@ -38,7 +38,7 @@ export default {
           window.location.pathname = redirectPath
         }
       }
-    },
-  },
+    }
+  }
 }
 </script>
