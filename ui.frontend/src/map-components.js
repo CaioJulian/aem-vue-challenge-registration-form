@@ -15,6 +15,7 @@ import BannerHome from './components/Home/BannerHome'
 import FooterHome from './components/Home/FooterHome'
 import HeaderHome from './components/Home/HeaderHome'
 import CardHome from './components/Home/CardHome'
+import Nav from './components/Nav/Nav'
 
 import {
   withComponentMappingContext,
@@ -128,3 +129,4 @@ MapTo('vue/components/home/header')(HeaderHome, {
   resourceType: 'vue/components/home/header'
 })
 MapTo('vue/components/home/card')(CardHome, EditConfig)
+MapTo('vue/components/nav')(Nav, EditConfig)

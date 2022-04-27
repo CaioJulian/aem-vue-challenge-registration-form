@@ -40,10 +40,8 @@
 </template>
 
 <script>
-import CheckUserLoginLocalStorageMixins from '@/mixins/CheckUserLoginLocalStorage'
 export default {
   name: 'FormLogin',
-  mixins: [CheckUserLoginLocalStorageMixins],
   data () {
     return {
       form: {
