@@ -42,9 +42,7 @@
 </template>
 
 <script>
-import CheckUserLoginLocalStorageMixins from '@/mixins/CheckUserLoginLocalStorage'
 export default {
-  mixins: [CheckUserLoginLocalStorageMixins],
   props: {
     description: {
       type: String,
