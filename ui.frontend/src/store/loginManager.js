@@ -22,7 +22,7 @@ export const actions = {
     const { user, password } = form
     let login = {}
 
-    if (logins && logins.length > 1) {
+    if (logins && logins.length) {
       login = logins.find((e) => e.login === user && e.password === password)
     }
 
