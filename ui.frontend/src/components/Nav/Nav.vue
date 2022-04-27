@@ -33,8 +33,7 @@ export default {
         if (pageName === 'login' && userLogin && userLogin.login) {
           this.$store.commit('loginManager/setLogin', userLogin)
           window.location.pathname = redirectPath
-        } else if (pageName === 'home' && userLogin && !userLogin.login) {
-          this.$store.commit('loginManager/setLogin', {})
+        } else if (pageName === 'home' && (!userLogin || (userLogin && !userLogin.login))) {
           window.location.pathname = redirectPath
         }
       }
