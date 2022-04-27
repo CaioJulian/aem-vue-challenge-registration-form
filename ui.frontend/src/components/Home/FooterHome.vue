@@ -69,7 +69,8 @@ export default {
           if (value > 0 && this.countdown) {
             this.number--
           } else if (value === 0) {
-            this.logout()
+            const { isInEditor } = this.$attrs.componentProperties
+            if (!isInEditor) this.logout()
           }
         }, 1000)
       },
