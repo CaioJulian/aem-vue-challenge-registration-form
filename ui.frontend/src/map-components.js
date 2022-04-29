@@ -16,6 +16,7 @@ import FooterHome from './components/Home/FooterHome'
 import HeaderHome from './components/Home/HeaderHome'
 import CardHome from './components/Home/CardHome'
 import Nav from './components/Nav/Nav'
+import BodyBackground from './components/BodyBackground/BodyBackground'
 import HeaderForm from './components/Form/HeaderForm'
 
 import {
@@ -132,5 +133,6 @@ MapTo('vue/components/home/header')(HeaderHome, {
 MapTo('vue/components/home/card')(CardHome, EditConfig)
 
 MapTo('vue/components/nav')(Nav, EditConfig)
+MapTo('vue/components/body-background')(BodyBackground, EditConfig)
 
 MapTo('vue/components/form/header')(HeaderForm, EditConfig)
