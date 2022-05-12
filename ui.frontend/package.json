@@ -3,9 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "serve": "vue-cli-service serve",
+    "serve": "npm run lint && vue-cli-service serve",
     "build": "npm run lint && vue-cli-service build --mode development && clientlib",
-    "lint": "vue-cli-service lint",
+    "lint": "vue-cli-service lint --fix",
     "test": "jest",
     "test:watch": "jest --watchAll",
     "test:coverage": "jest --coverage"
@@ -21,6 +21,7 @@
     "vue-class-component": "^7.2.3",
     "vue-property-decorator": "^9.1.2",
     "vue-router": "^3.5.1",
+    "vue-the-mask": "^0.11.1",
     "vuex": "^3.6.2"
   },
   "peerDependencies": {
@@ -31,6 +32,7 @@
     "@babel/core": "^7.17.9",
     "@babel/preset-env": "^7.16.11",
     "@types/jest": "^27.4.1",
+    "@types/vue-the-mask": "^0.11.1",
     "@typescript-eslint/eslint-plugin": "^2.33.0",
     "@typescript-eslint/parser": "^2.33.0",
     "@vue/cli-plugin-babel": "~4.5.0",
