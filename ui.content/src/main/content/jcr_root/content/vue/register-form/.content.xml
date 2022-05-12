@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Page">
+    <jcr:content
+        cq:lastModified="{Date}2022-05-09T12:00:24.903-03:00"
+        cq:lastModifiedBy="admin"
+        cq:template="/conf/vue/settings/wcm/templates/spa-page-template"
+        jcr:primaryType="cq:PageContent"
+        jcr:title="Register Form"
+        sling:resourceType="vue/components/page">
+        <root
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="wcm/foundation/components/responsivegrid">
+            <responsivegrid
+                jcr:created="{Date}2022-04-18T16:49:57.105-03:00"
+                jcr:createdBy="admin"
+                jcr:lastModified="{Date}2022-04-18T16:57:52.045-03:00"
+                jcr:lastModifiedBy="admin"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="wcm/foundation/components/responsivegrid">
+                <responsivegrid
+                    jcr:created="{Date}2022-04-28T11:20:44.835-03:00"
+                    jcr:createdBy="admin"
+                    jcr:lastModified="{Date}2022-04-28T11:20:44.835-03:00"
+                    jcr:lastModifiedBy="admin"
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="wcm/foundation/components/responsivegrid">
+                    <cq:responsive jcr:primaryType="nt:unstructured">
+                        <default
+                            jcr:primaryType="nt:unstructured"
+                            offset="0"
+                            width="12"/>
+                    </cq:responsive>
+                    <body_background
+                        jcr:created="{Date}2022-04-28T17:37:07.727-03:00"
+                        jcr:createdBy="admin"
+                        jcr:lastModified="{Date}2022-04-28T17:52:52.675-03:00"
+                        jcr:lastModifiedBy="admin"
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="vue/components/body-background"
+                        background="light-gray"/>
+                    <container
+                        jcr:created="{Date}2022-04-28T12:02:08.828-03:00"
+                        jcr:createdBy="admin"
+                        jcr:lastModified="{Date}2022-04-28T12:02:08.828-03:00"
+                        jcr:lastModifiedBy="admin"
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="vue/components/container">
+                        <header
+                            jcr:created="{Date}2022-04-28T12:02:41.739-03:00"
+                            jcr:createdBy="admin"
+                            jcr:lastModified="{Date}2022-04-28T12:02:41.739-03:00"
+                            jcr:lastModifiedBy="admin"
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="vue/components/form/header">
+                            <cq:responsive jcr:primaryType="nt:unstructured">
+                                <default
+                                    jcr:primaryType="nt:unstructured"
+                                    offset="0"
+                                    width="10"/>
+                            </cq:responsive>
+                        </header>
+                        <cq:responsive jcr:primaryType="nt:unstructured">
+                            <default
+                                jcr:primaryType="nt:unstructured"
+                                offset="2"
+                                width="8"/>
+                            <phone
+                                jcr:primaryType="nt:unstructured"
+                                offset="1"
+                                width="9"/>
+                            <tablet
+                                jcr:primaryType="nt:unstructured"
+                                offset="1"
+                                width="10"/>
+                        </cq:responsive>
+                    </container>
+                    <line
+                        jcr:created="{Date}2022-04-29T14:12:41.215-03:00"
+                        jcr:createdBy="admin"
+                        jcr:lastModified="{Date}2022-04-29T14:12:41.215-03:00"
+                        jcr:lastModifiedBy="admin"
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="vue/components/form/line"/>
+                    <card
+                        jcr:created="{Date}2022-04-29T15:41:24.993-03:00"
+                        jcr:createdBy="admin"
+                        jcr:lastModified="{Date}2022-05-04T15:44:01.642-03:00"
+                        jcr:lastModifiedBy="admin"
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="vue/components/form/card"
+                        description="Description test"
+                        title="Team Sign Up">
+                        <forms jcr:primaryType="nt:unstructured">
+                            <item0
+                                jcr:primaryType="nt:unstructured"
+                                formName="Test">
+                                <inputs jcr:primaryType="nt:unstructured">
+                                    <item0
+                                        jcr:primaryType="nt:unstructured"
+                                        inputName="Fullname"
+                                        type="text"/>
+                                </inputs>
+                            </item0>
+                        </forms>
+                    </card>
+                    <input
+                        jcr:created="{Date}2022-05-05T19:17:40.842-03:00"
+                        jcr:createdBy="admin"
+                        jcr:lastModified="{Date}2022-05-06T11:39:15.868-03:00"
+                        jcr:lastModifiedBy="admin"
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="vue/components/input">
+                        <elements jcr:primaryType="nt:unstructured">
+                            <item0
+                                jcr:primaryType="nt:unstructured"
+                                label="Full Name"
+                                type="text"/>
+                        </elements>
+                    </input>
+                </responsivegrid>
+            </responsivegrid>
+        </root>
+    </jcr:content>
+</jcr:root>
