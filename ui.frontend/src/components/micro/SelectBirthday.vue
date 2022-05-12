@@ -1,6 +1,6 @@
 <template>
   <div class="select-birthday">
-    <p class="select-birthday__title">Birthday *</p>
+    <p class="select-birthday__title">{{ item.label }} {{ item.required ? '*' : '' }}</p>
     <div class="select-birthday__date">
       <div class="select-birthday__group">
         <label for="day" class="select-birthday__label">Day</label>
@@ -10,7 +10,7 @@
           name="day"
           class="select-birthday__select select-birthday__select-day"
           aria-label="Day"
-          required
+          :required="item.required"
           @change="calcAge()"
         >
           <option disabled value="">Day</option>
@@ -27,7 +27,7 @@
           name="month"
           class="select-birthday__select select-birthday__select-month"
           aria-label="Month"
-          required
+          :required="item.required"
           @change="calcAge()"
         >
           <option disabled value="">Month</option>
@@ -48,7 +48,7 @@
           name="year"
           class="select-birthday__select select-birthday__select-year"
           aria-label="Year"
-          required
+          :required="item.required"
           @change="calcAge()"
         >
           <option disabled value="">Year</option>
@@ -73,6 +73,12 @@
 
 <script>
 export default {
+  props: {
+    item: {
+      type: Object,
+      default: () => ({})
+    }
+  },
   data () {
     return {
       day: '',
