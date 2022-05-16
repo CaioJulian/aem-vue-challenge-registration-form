@@ -4,6 +4,9 @@
       <article class="card-form__header">
         <p class="card-form__title">Team Sign Up</p>
       </article>
+      <article>
+        <NavTabs />
+      </article>
       <article class="card-form__body">
         <form action="">
           <InputGroup v-for="(item, index) in inputs" :key="index" :item="item" />
@@ -15,6 +18,7 @@
 
 <script>
 import InputGroup from '../micro/InputGroup.vue'
+import NavTabs from '../micro/NavTabs.vue'
 export default {
   props: {
     inputs: {
@@ -22,7 +26,7 @@ export default {
       default: () => []
     }
   },
-  components: { InputGroup }
+  components: { InputGroup, NavTabs }
 }
 </script>
 

@@ -30,6 +30,6 @@ describe('SelectBirthday - unit', () => {
     expect(wrapper.vm.day).toBe(14)
     expect(wrapper.vm.month).toBe(5)
     expect(wrapper.vm.year).toBe(1989)
-    expect(wrapper.vm.age).toBe(32)
+    expect(wrapper.vm.age).toBe(33)
   });
 })
