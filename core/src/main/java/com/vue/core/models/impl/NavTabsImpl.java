@@ -23,7 +23,8 @@ import java.util.List;
 import com.adobe.acs.commons.models.injectors.annotation.ChildResourceFromRequest;
 import com.adobe.cq.export.json.ComponentExporter;
 import com.adobe.cq.export.json.ExporterConstants;
-import com.vue.core.models.Card;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.vue.core.models.Inputs;
 import com.vue.core.models.NavTabs;
 import org.apache.sling.api.SlingHttpServletRequest;
 import org.apache.sling.api.resource.Resource;
@@ -31,26 +32,35 @@ import org.apache.sling.models.annotations.Exporter;
 import org.apache.sling.models.annotations.Model;
 import org.apache.sling.models.annotations.injectorspecific.InjectionStrategy;
 import org.apache.sling.models.annotations.injectorspecific.SlingObject;
+import org.apache.sling.models.annotations.injectorspecific.ValueMapValue;
 
 @Model(adaptables = {
     SlingHttpServletRequest.class
 }, adapters = {
-    Card.class,
+    NavTabs.class,
     ComponentExporter.class
-}, resourceType = "vue/components/form/card")
+})
 @Exporter(name = ExporterConstants.SLING_MODEL_EXPORTER_NAME, extensions = ExporterConstants.SLING_MODEL_EXTENSION)
-public class CardImpl
-    implements Card
+public class NavTabsImpl
+    implements NavTabs
 {
 
+    @ValueMapValue(injectionStrategy = InjectionStrategy.OPTIONAL)
+    private String tabName;
     @ChildResourceFromRequest(injectionStrategy = InjectionStrategy.OPTIONAL)
-    private List<NavTabs> navTabs;
+    private List<Inputs> inputs;
     @SlingObject
     private Resource resource;
 
     @Override
-    public List<NavTabs> getNavTabs() {
-        return navTabs != null ? Collections.unmodifiableList(navTabs) : null;
+    @JsonProperty("tabName")
+    public String getTabName() {
+        return tabName;
+    }
+
+    @Override
+    public List<Inputs> getInputs() {
+        return inputs != null ? Collections.unmodifiableList(inputs) : null;
     }
 
     @Override

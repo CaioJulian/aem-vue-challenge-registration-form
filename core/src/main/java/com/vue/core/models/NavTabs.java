@@ -20,19 +20,23 @@ package com.vue.core.models;
 
 import java.util.List;
 import com.adobe.cq.export.json.ComponentExporter;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import org.osgi.annotation.versioning.ConsumerType;
 
 
 /**
- * Defines the {@code Card} Sling Model used for the {@code vue/components/form/card} component.
+ * Defines the {@code NavTabs} Sling Model used for the multifield in {@code vue/components/form/card} component.
  * 
  */
 @ConsumerType
-public interface Card
+public interface NavTabs
     extends ComponentExporter
 {
 
 
-    List<NavTabs> getNavTabs();
+    @JsonProperty("tabName")
+    String getTabName();
+
+    List<Inputs> getInputs();
 
 }
