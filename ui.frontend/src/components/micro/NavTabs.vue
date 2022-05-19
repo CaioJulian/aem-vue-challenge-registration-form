@@ -2,23 +2,24 @@
   <ul v-if="navs.length" class="nav-tabs">
     <li
       class="nav-tabs__item"
-      :class="{ 'nav-tabs__item--active': isActive(idName(item.name)) }"
+      :class="{ 'nav-tabs__item--active': isActive(item.tabName) }"
       v-for="(item, index) in navs"
       :key="`nav-${index}`"
     >
       <a
         :data-testid="`nav-tabs-${index}`"
         class="nav-tabs__link"
-        :class="{ 'nav-tabs__link--active': isActive(idName(item.name)) }"
-        :href="`#${idName(item.name)}`"
-        @click.prevent="setActive(idName(item.name))"
-        >{{ item.name }}</a
+        :class="{ 'nav-tabs__link--active': isActive(item.tabName) }"
+        :href="`#${idName(item.tabName)}`"
+        @click.prevent="setActive(item.tabName)"
+        >{{ item.tabName }}</a
       >
     </li>
   </ul>
 </template>
 
 <script>
+import { mapState } from 'vuex'
 export default {
   props: {
     navs: {
@@ -26,24 +27,29 @@ export default {
       default: () => []
     }
   },
-  data () {
-    return {
-      activeItem: ''
+
+  computed: {
+    ...mapState('formManager', ['activeItem'])
+  },
+
+  watch: {
+    navs (newValue) {
+      if (!this.activeItem && newValue.length) this.firstActiveItem()
     }
   },
-  mounted () {
-    this.firstActiveItem()
-  },
+
   methods: {
     firstActiveItem () {
       const { navs } = this
-      if (navs.length) this.activeItem = this.idName(navs[0].name)
+      if (navs.length) this.setActive(navs[0].tabName)
     },
     setActive (item) {
-      this.activeItem = item
+      const name = this.idName(item)
+      this.$store.commit('formManager/setActive', name)
     },
     isActive (item) {
-      return this.activeItem === item
+      const name = this.idName(item)
+      return this.activeItem === name
     },
     idName (link) {
       return link ? link.toLowerCase().replace(' ', '-') : ''

@@ -1,23 +1,59 @@
-import { mount } from '@vue/test-utils'
+import { mount, createLocalVue } from '@vue/test-utils'
 import CardForm from './CardForm.vue'
+import Vuex, { Store } from 'vuex'
+import * as managerForm from '@/store/formManager'
+const localVue = createLocalVue()
+localVue.use(Vuex)
 
 describe('CardForm - unit', () => {
+  let store, formManager
+
+  beforeEach(() => {
+    formManager = {
+      namespaced: true,
+      ...managerForm
+    }
+
+    store = new Store({
+      modules: {
+        formManager
+      }
+    })
+  })
+
   const mountCardForm = () => {
-    const wrapper = mount(CardForm)
+    const wrapper = mount(CardForm, {
+      localVue,
+      store
+    })
     return wrapper
   }
 
   it('should mount component', () => {
     const wrapper = mountCardForm()
-    expect(wrapper.vm).toBeTruthy()
+    expect(wrapper.html()).toBeTruthy()
   })
 
-  it('should setProps inputs one item', async () => {
+  it('should setProps navTabs one tabName', async () => {
     const wrapper = mountCardForm()
     const props = {
-      inputs: [{ label: 'Full Name', required: true, type: 'text' }]
+      navTabs: [
+        {
+          tabName: 'Basic',
+          inputs: [{ label: 'Full Name', required: true, type: 'text' }]
+        }
+      ]
     }
     await wrapper.setProps(props)
-    expect(wrapper.vm.inputs).toBe(props.inputs)
+    expect(wrapper.vm.navTabs).toBe(props.navTabs)
+  })
+
+  it('should setProps navTabs tabName empty', async () => {
+    const wrapper = mountCardForm()
+    const props = {
+      navTabs: [{ tabName: '' }]
+    }
+    await wrapper.setProps(props)
+    expect(wrapper.vm.navTabs).toBe(props.navTabs)
   })
 })
