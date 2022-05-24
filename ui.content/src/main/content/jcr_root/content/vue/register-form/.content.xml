@@ -2,7 +2,7 @@
 <jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
     jcr:primaryType="cq:Page">
     <jcr:content
-        cq:lastModified="{Date}2022-05-09T12:00:24.903-03:00"
+        cq:lastModified="{Date}2022-05-24T11:33:24.665-03:00"
         cq:lastModifiedBy="admin"
         cq:template="/conf/vue/settings/wcm/templates/spa-page-template"
         jcr:primaryType="cq:PageContent"
@@ -83,41 +83,52 @@
                         jcr:primaryType="nt:unstructured"
                         sling:resourceType="vue/components/form/line"/>
                     <card
-                        jcr:created="{Date}2022-04-29T15:41:24.993-03:00"
+                        jcr:created="{Date}2022-05-18T16:42:31.600-03:00"
                         jcr:createdBy="admin"
-                        jcr:lastModified="{Date}2022-05-04T15:44:01.642-03:00"
+                        jcr:lastModified="{Date}2022-05-24T11:33:24.634-03:00"
                         jcr:lastModifiedBy="admin"
                         jcr:primaryType="nt:unstructured"
-                        sling:resourceType="vue/components/form/card"
-                        description="Description test"
-                        title="Team Sign Up">
-                        <forms jcr:primaryType="nt:unstructured">
+                        sling:resourceType="vue/components/form/card">
+                        <navTabs jcr:primaryType="nt:unstructured">
                             <item0
                                 jcr:primaryType="nt:unstructured"
-                                formName="Test">
+                                tabName="Basic">
                                 <inputs jcr:primaryType="nt:unstructured">
                                     <item0
                                         jcr:primaryType="nt:unstructured"
-                                        inputName="Fullname"
-                                        type="text"/>
+                                        label="Full Name"
+                                        required="true"
+                                        selectType="text"/>
+                                    <item1
+                                        jcr:primaryType="nt:unstructured"
+                                        label="Birthday"
+                                        required="true"
+                                        selectType="birthday"/>
                                 </inputs>
                             </item0>
-                        </forms>
-                    </card>
-                    <input
-                        jcr:created="{Date}2022-05-05T19:17:40.842-03:00"
-                        jcr:createdBy="admin"
-                        jcr:lastModified="{Date}2022-05-06T11:39:15.868-03:00"
-                        jcr:lastModifiedBy="admin"
-                        jcr:primaryType="nt:unstructured"
-                        sling:resourceType="vue/components/input">
-                        <elements jcr:primaryType="nt:unstructured">
-                            <item0
+                            <item1
                                 jcr:primaryType="nt:unstructured"
-                                label="Full Name"
-                                type="text"/>
-                        </elements>
-                    </input>
+                                tabName="Social">
+                                <inputs jcr:primaryType="nt:unstructured">
+                                    <item0
+                                        jcr:primaryType="nt:unstructured"
+                                        label="Test phone"
+                                        selectType="phone"/>
+                                </inputs>
+                            </item1>
+                            <item2
+                                jcr:primaryType="nt:unstructured"
+                                tabName="Certificates">
+                                <inputs jcr:primaryType="nt:unstructured">
+                                    <item0
+                                        jcr:primaryType="nt:unstructured"
+                                        label="Test email"
+                                        required="true"
+                                        selectType="email"/>
+                                </inputs>
+                            </item2>
+                        </navTabs>
+                    </card>
                 </responsivegrid>
             </responsivegrid>
         </root>
