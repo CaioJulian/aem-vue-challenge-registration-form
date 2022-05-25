@@ -39,6 +39,7 @@ describe('CardForm - unit', () => {
     const props = {
       navTabs: [
         {
+          buttonName: 'Next',
           tabName: 'Basic',
           inputs: [{ label: 'Full Name', required: true, type: 'text' }]
         }
@@ -52,6 +53,26 @@ describe('CardForm - unit', () => {
     const wrapper = mountCardForm()
     const props = {
       navTabs: [{ tabName: '' }]
+    }
+    await wrapper.setProps(props)
+    expect(wrapper.vm.navTabs).toBe(props.navTabs)
+  })
+
+  it('should setProps navTabs with two tabs', async () => {
+    const wrapper = mountCardForm()
+    const props = {
+      navTabs: [
+        {
+          buttonName: 'Next',
+          tabName: 'Basic',
+          inputs: [{ label: 'Full Name', required: true, type: 'text' }]
+        },
+        {
+          buttonName: 'Finish',
+          tabName: 'Social',
+          inputs: [{ label: 'LinkedIn', required: false, type: 'text' }]
+        }
+      ]
     }
     await wrapper.setProps(props)
     expect(wrapper.vm.navTabs).toBe(props.navTabs)

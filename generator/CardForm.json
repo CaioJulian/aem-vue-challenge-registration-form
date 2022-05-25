@@ -44,6 +44,13 @@
             "json-property": "tabName"
           },
           {
+            "field": "buttonName",
+            "type": "textfield",
+            "label": "Button Name",
+            "json-expose": true,
+            "json-property": "buttonName"
+          },
+          {
             "field": "inputs",
             "type": "multifield",
             "label": "Inputs",

@@ -47,6 +47,8 @@ public class NavTabsImpl
 
     @ValueMapValue(injectionStrategy = InjectionStrategy.OPTIONAL)
     private String tabName;
+    @ValueMapValue(injectionStrategy = InjectionStrategy.OPTIONAL)
+    private String buttonName;
     @ChildResourceFromRequest(injectionStrategy = InjectionStrategy.OPTIONAL)
     private List<Inputs> inputs;
     @SlingObject
@@ -56,6 +58,12 @@ public class NavTabsImpl
     @JsonProperty("tabName")
     public String getTabName() {
         return tabName;
+    }
+
+    @Override
+    @JsonProperty("buttonName")
+    public String getButtonName() {
+        return buttonName;
     }
 
     @Override

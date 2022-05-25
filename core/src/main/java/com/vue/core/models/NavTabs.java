@@ -37,6 +37,9 @@ public interface NavTabs
     @JsonProperty("tabName")
     String getTabName();
 
+    @JsonProperty("buttonName")
+    String getButtonName();
+
     List<Inputs> getInputs();
 
 }

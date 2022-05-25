@@ -46,6 +46,10 @@
                                  jcr:primaryType="nt:unstructured"
                                  name="./tabName"
                                  sling:resourceType="granite/ui/components/coral/foundation/form/textfield"/>
+                        <buttonName fieldLabel="Button Name"
+                                    jcr:primaryType="nt:unstructured"
+                                    name="./buttonName"
+                                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield"/>
                         <inputs composite="{Boolean}true"
                               fieldLabel="Inputs"
                               jcr:primaryType="nt:unstructured"
