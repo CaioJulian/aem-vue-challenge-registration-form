@@ -7,7 +7,8 @@ module.exports = {
   extends: [
     'plugin:vue/essential',
     '@vue/standard',
-    '@vue/typescript/recommended'
+    '@vue/typescript/recommended',
+    'prettier'
   ],
   parserOptions: {
     ecmaVersion: 2022
