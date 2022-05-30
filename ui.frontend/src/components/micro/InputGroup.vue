@@ -11,6 +11,7 @@
 
       <input
         v-if="item.type === 'phone'"
+        v-model.lazy="formFields[idName]"
         type="tel"
         :id="idName"
         :name="item.label"
@@ -21,6 +22,7 @@
 
       <input
         v-else
+        v-model.lazy="formFields[idName]"
         :type="item.type"
         :id="idName"
         :name="item.label"
@@ -40,17 +42,32 @@ export default {
       default: () => ({})
     }
   },
+  data() {
+    return {
+      formFields: {}
+    }
+  },
   computed: {
-    idName () {
+    idName() {
       const { label } = this.item
       return label ? label.toLowerCase().replace(' ', '-') : ''
     },
-    hasBirthday () {
+    hasBirthday() {
       const { type } = this.item
       return type === 'birthday'
     }
   },
-  components: { SelectBirthday }
+  components: { SelectBirthday },
+  watch: {
+    formFields: {
+      handler(newValue) {
+        if (newValue) {
+          this.$store.commit('formManager/setFormFields', newValue)
+        }
+      },
+      deep: true
+    }
+  }
 }
 </script>
 

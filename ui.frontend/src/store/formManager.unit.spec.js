@@ -17,8 +17,14 @@ describe('formManager - unit', () => {
     activeItem = 'basic'
   })
 
-  it('should return state activeItem', () => {
+  it('should set state activeItem', () => {
     store.commit('setActive', activeItem)
     expect(store.state.activeItem).toEqual(activeItem)
+  });
+
+  it('should set state formFields', () => {
+    const formFields = { name: 'User Test' }
+    store.commit('setFormFields', formFields)
+    expect(store.state.formFields).toEqual(formFields)
   });
 })
