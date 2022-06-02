@@ -19,7 +19,7 @@ import DOMPurify from 'dompurify'
 import extractModelId from '../../utils/extract-model-id'
 
 export default {
-  name: 'Text',
+  name: 'TextComponent',
   props: {
     cqPath: {
       type: String

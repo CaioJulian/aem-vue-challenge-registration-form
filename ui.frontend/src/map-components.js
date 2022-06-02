@@ -16,6 +16,10 @@ import FooterHome from './components/Home/FooterHome'
 import HeaderHome from './components/Home/HeaderHome'
 import CardHome from './components/Home/CardHome'
 import Nav from './components/Nav/Nav'
+import BodyBackground from './components/BodyBackground/BodyBackground'
+import HeaderForm from './components/Form/HeaderForm'
+import LineForm from './components/Form/LineForm'
+import CardForm from './components/Form/CardForm'
 
 import {
   withComponentMappingContext,
@@ -129,4 +133,10 @@ MapTo('vue/components/home/header')(HeaderHome, {
   resourceType: 'vue/components/home/header'
 })
 MapTo('vue/components/home/card')(CardHome, EditConfig)
+
 MapTo('vue/components/nav')(Nav, EditConfig)
+MapTo('vue/components/body-background')(BodyBackground, EditConfig)
+
+MapTo('vue/components/form/header')(HeaderForm, EditConfig)
+MapTo('vue/components/form/line')(LineForm, EditConfig)
+MapTo('vue/components/form/card')(CardForm, EditConfig)
