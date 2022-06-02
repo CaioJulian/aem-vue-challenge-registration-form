@@ -2,7 +2,7 @@
 <jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
     jcr:primaryType="cq:Page">
     <jcr:content
-        cq:lastModified="{Date}2022-05-24T11:33:24.665-03:00"
+        cq:lastModified="{Date}2022-05-30T18:24:34.744-03:00"
         cq:lastModifiedBy="admin"
         cq:template="/conf/vue/settings/wcm/templates/spa-page-template"
         jcr:primaryType="cq:PageContent"
@@ -85,13 +85,14 @@
                     <card
                         jcr:created="{Date}2022-05-18T16:42:31.600-03:00"
                         jcr:createdBy="admin"
-                        jcr:lastModified="{Date}2022-05-24T11:33:24.634-03:00"
+                        jcr:lastModified="{Date}2022-05-30T18:24:34.716-03:00"
                         jcr:lastModifiedBy="admin"
                         jcr:primaryType="nt:unstructured"
                         sling:resourceType="vue/components/form/card">
                         <navTabs jcr:primaryType="nt:unstructured">
                             <item0
                                 jcr:primaryType="nt:unstructured"
+                                buttonName="Next"
                                 tabName="Basic">
                                 <inputs jcr:primaryType="nt:unstructured">
                                     <item0
@@ -101,6 +102,19 @@
                                         selectType="text"/>
                                     <item1
                                         jcr:primaryType="nt:unstructured"
+                                        label="Nickname"
+                                        selectType="text"/>
+                                    <item2
+                                        jcr:primaryType="nt:unstructured"
+                                        label="Email"
+                                        required="true"
+                                        selectType="email"/>
+                                    <item3
+                                        jcr:primaryType="nt:unstructured"
+                                        label="Phone"
+                                        selectType="phone"/>
+                                    <item4
+                                        jcr:primaryType="nt:unstructured"
                                         label="Birthday"
                                         required="true"
                                         selectType="birthday"/>
@@ -108,23 +122,37 @@
                             </item0>
                             <item1
                                 jcr:primaryType="nt:unstructured"
+                                buttonName="Next"
                                 tabName="Social">
                                 <inputs jcr:primaryType="nt:unstructured">
                                     <item0
                                         jcr:primaryType="nt:unstructured"
-                                        label="Test phone"
-                                        selectType="phone"/>
+                                        label="LinkedIn"
+                                        selectType="text"/>
+                                    <item1
+                                        jcr:primaryType="nt:unstructured"
+                                        label="Github"
+                                        required="true"
+                                        selectType="text"/>
                                 </inputs>
                             </item1>
                             <item2
                                 jcr:primaryType="nt:unstructured"
+                                buttonName="Finish"
                                 tabName="Certificates">
                                 <inputs jcr:primaryType="nt:unstructured">
                                     <item0
                                         jcr:primaryType="nt:unstructured"
-                                        label="Test email"
-                                        required="true"
-                                        selectType="email"/>
+                                        label="Cerficates"
+                                        selectType="text"/>
+                                    <item1
+                                        jcr:primaryType="nt:unstructured"
+                                        label="Institution"
+                                        selectType="text"/>
+                                    <item2
+                                        jcr:primaryType="nt:unstructured"
+                                        label="Graduation"
+                                        selectType="text"/>
                                 </inputs>
                             </item2>
                         </navTabs>
