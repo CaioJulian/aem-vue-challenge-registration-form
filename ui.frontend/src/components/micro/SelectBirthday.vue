@@ -117,7 +117,15 @@ export default {
         const yearCalc = ageDt.getFullYear()
         const age = Math.abs(yearCalc - 1970)
         this.age = age
+        this.setFormFields()
       }
+    },
+
+    setFormFields(){
+      const { day, month, year, age } = this
+      const birthday = `${(`0${day}`).slice(-2)}/${(`0${month}`).slice(-2)}/${year}`
+      const formFields = { birthday , age }
+      this.$store.commit('formManager/setFormFields', formFields)
     }
   }
 }

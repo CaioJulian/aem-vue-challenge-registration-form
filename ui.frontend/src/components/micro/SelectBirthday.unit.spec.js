@@ -1,9 +1,32 @@
-import { mount } from '@vue/test-utils'
+import { mount, createLocalVue } from '@vue/test-utils'
 import SelectBirthday from './SelectBirthday.vue'
+import Vuex, { Store } from  'vuex'
+import * as managerForm from '@/store/formManager'
+
+const localVue = createLocalVue()
+localVue.use(Vuex)
 
 describe('SelectBirthday - unit', () => {
+  let store, formManager
+
+  beforeEach(() => {
+    formManager = {
+      namespaced: true,
+      ...managerForm
+    }
+
+    store = new Store({
+      modules:{
+        formManager
+      }
+    })
+  })
+
   const mountSelectBirthday = () => {
-    const wrapper = mount(SelectBirthday)
+    const wrapper = mount(SelectBirthday, {
+      localVue,
+      store
+    })
 
     return wrapper
   }
@@ -11,9 +34,10 @@ describe('SelectBirthday - unit', () => {
   it('should mount component', () => {
     const wrapper = mountSelectBirthday()
     expect(wrapper.vm).toBeTruthy()
+    expect(wrapper.classes('select-birthday')).toBe(true)
   })
 
-  it('should select date 1989-05-14 and return age 32 years', async () => {
+  it('should select date 1989-05-14 and return age 33 years', async () => {
     const wrapper = mountSelectBirthday()
     const dayOptions = wrapper.find('#day').findAll('option')
     await dayOptions.at(14).setSelected()
